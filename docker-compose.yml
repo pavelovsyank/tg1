@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  tg1:
+    container_name: tg1
+    restart: unless-stopped
+    build:
+      context: ./
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: "2"
+    command: "python start.py"
